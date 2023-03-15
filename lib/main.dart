@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task/provider/service_provider.dart';
 import 'package:task/screens/newpage.dart';
-
 import 'models/images.dart';
 import 'models/listmodel.dart';
 
@@ -12,7 +11,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -27,7 +25,6 @@ class MyApp extends StatelessWidget {
 
 class fruits extends StatefulWidget {
   const fruits({super.key});
-
   @override
   State<fruits> createState() => _fruitsState();
 }
@@ -74,9 +71,9 @@ class _fruitsState extends State<fruits> {
                   child: GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2, childAspectRatio: 4.8 / 8),
+                              crossAxisCount: 2, childAspectRatio: 5.8 / 8),
                       itemCount: 8,
-                      itemBuilder: (BuildContext context, int index) {
+                      itemBuilder: (buildContext, index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 15, vertical: 5),
@@ -133,10 +130,11 @@ class _fruitsState extends State<fruits> {
                                     height: 10,
                                   ),
                                   GestureDetector(
-                                    onTap: () => Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const name())),
+                                    onTap: () => Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                            builder: (index1) => name(
+                                                  index1: index,
+                                                ))),
                                     child: Container(
                                       height: 35,
                                       width: double.infinity,
